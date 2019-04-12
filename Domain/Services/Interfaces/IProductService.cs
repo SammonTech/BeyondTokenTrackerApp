@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using Domain.Entities.Dtos;
-using Domain.Entities.Models;
+using TokenTracker.Domain.Entities.Dtos;
+using TokenTracker.Domain.Entities.Models;
 
 namespace Domain.Services.Interfaces
 {

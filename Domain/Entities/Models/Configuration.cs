@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Domain.Entities.Models
+namespace TokenTracker.Domain.Entities.Models
 {
     public partial class Configuration
     {

@@ -21,7 +21,7 @@ namespace DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Domain.Entities.Models.Badge", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.Badge", b =>
                 {
                     b.Property<int>("BadgeId")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace DAL.Migrations
                     b.ToTable("Badge");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.Configuration", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.Configuration", b =>
                 {
                     b.Property<int>("ConfigurationId")
                         .ValueGeneratedOnAdd()
@@ -70,7 +70,7 @@ namespace DAL.Migrations
                     b.ToTable("Configuration");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.Group", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.Group", b =>
                 {
                     b.Property<int>("GroupId")
                         .ValueGeneratedOnAdd()
@@ -89,7 +89,7 @@ namespace DAL.Migrations
                     b.ToTable("Group");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.GroupDetail", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.GroupDetail", b =>
                 {
                     b.Property<int>("GroupDetailId")
                         .ValueGeneratedOnAdd()
@@ -115,7 +115,7 @@ namespace DAL.Migrations
                     b.ToTable("GroupDetail");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.PointTransaction", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.PointTransaction", b =>
                 {
                     b.Property<int>("PointTransactionId")
                         .ValueGeneratedOnAdd()
@@ -155,7 +155,7 @@ namespace DAL.Migrations
                     b.ToTable("PointTransaction");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.PointTransactionType", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.PointTransactionType", b =>
                 {
                     b.Property<int>("PointTransactionTypeId")
                         .ValueGeneratedOnAdd()
@@ -191,7 +191,7 @@ namespace DAL.Migrations
                     b.ToTable("PointTransactionType");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.Product", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -226,7 +226,7 @@ namespace DAL.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.ProductGroup", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.ProductGroup", b =>
                 {
                     b.Property<int>("ProductGroupId")
                         .ValueGeneratedOnAdd()
@@ -250,7 +250,7 @@ namespace DAL.Migrations
                     b.ToTable("ProductGroup");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.Role", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.Role", b =>
                 {
                     b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd()
@@ -270,7 +270,7 @@ namespace DAL.Migrations
                     b.ToTable("Role");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.User", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -308,69 +308,69 @@ namespace DAL.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.Badge", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.Badge", b =>
                 {
-                    b.HasOne("Domain.Entities.Models.Group", "Group")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.Group", "Group")
                         .WithMany("Badges")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_Badge_Group");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.GroupDetail", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.GroupDetail", b =>
                 {
-                    b.HasOne("Domain.Entities.Models.Group", "Group")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.Group", "Group")
                         .WithMany("GroupDetails")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_GroupDetail_Group");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.PointTransaction", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.PointTransaction", b =>
                 {
-                    b.HasOne("Domain.Entities.Models.User", "AwardFrom")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.User", "AwardFrom")
                         .WithMany("PointTransactionAwardFroms")
                         .HasForeignKey("AwardFromId")
                         .HasConstraintName("FK_PointTransaction_AwardFromId");
 
-                    b.HasOne("Domain.Entities.Models.User", "AwardTo")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.User", "AwardTo")
                         .WithMany("PointTransactionAwardTos")
                         .HasForeignKey("AwardToId")
                         .HasConstraintName("FK_PointTransaction_AwardToId");
 
-                    b.HasOne("Domain.Entities.Models.PointTransactionType", "PointTransactionType")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.PointTransactionType", "PointTransactionType")
                         .WithMany("PointTransactions")
                         .HasForeignKey("PointTransactionTypeId")
                         .HasConstraintName("FK_PointTransaction_PointTransactionType");
 
-                    b.HasOne("Domain.Entities.Models.Product", "Product")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.Product", "Product")
                         .WithMany("PointTransactions")
                         .HasForeignKey("ProductId")
                         .HasConstraintName("FK_PointTransaction_Product");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.PointTransactionType", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.PointTransactionType", b =>
                 {
-                    b.HasOne("Domain.Entities.Models.Role", "Role")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.Role", "Role")
                         .WithMany("PointTransactionTypes")
                         .HasForeignKey("RoleId")
                         .HasConstraintName("FK_PointTransactionType_Role");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.Product", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.Product", b =>
                 {
-                    b.HasOne("Domain.Entities.Models.ProductGroup", "ProductGroup")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.ProductGroup", "ProductGroup")
                         .WithMany("Products")
                         .HasForeignKey("ProductGroupId")
                         .HasConstraintName("FK_Product_ProductGroup");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Models.User", b =>
+            modelBuilder.Entity("TokenTracker.Domain.Entities.Models.User", b =>
                 {
-                    b.HasOne("Domain.Entities.Models.Group", "Group")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.Group", "Group")
                         .WithMany("Users")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_User_Group");
 
-                    b.HasOne("Domain.Entities.Models.Role", "Role")
+                    b.HasOne("TokenTracker.Domain.Entities.Models.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
                         .HasConstraintName("FK_User_Role");

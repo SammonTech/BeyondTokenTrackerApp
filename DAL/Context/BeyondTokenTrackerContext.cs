@@ -1,6 +1,6 @@
 ﻿using System;
 using DAL.Context.Interfaces;
-using Domain.Entities.Models;
+using TokenTracker.Domain.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Context
@@ -218,6 +218,10 @@ namespace DAL.Context
                     .IsRequired()
                     .HasMaxLength(255)
                     .IsUnicode(false);
+
+                entity.Property(e => e.IsActive)
+                    .IsRequired()
+                    .HasDefaultValueSql("((1))");
 
                 entity.HasOne(d => d.Group)
                     .WithMany(p => p.Users)

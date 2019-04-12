@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Domain.Entities.Dtos;
-using Domain.Entities.Models;
+using TokenTracker.Domain.Entities.Dtos;
+using TokenTracker.Domain.Entities.Models;
 
-namespace BeyondTokenTrackerApp.Mapping
+namespace TokenTrackerApp.Mapping
 {
     public class ServiceMappingProfile : Profile
     {

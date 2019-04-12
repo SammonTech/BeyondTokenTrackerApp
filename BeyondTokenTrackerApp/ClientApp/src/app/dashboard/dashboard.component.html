@@ -7,61 +7,94 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-9">
+    <div class="col">
       <div class="tab-content">
         <div class="tab-pane active" id="home">
+          <br/>
+          <table class="table" style="caption-side: top;">
+            <caption style="caption-side: top;"><h3>Badges Earned!</h3></caption>
+            <thead>
+            <th scope="col" style="font-size: 1em;">Badge</th>
+            <th scope="col" style="font-size: 1em;">Name</th>
+            <th scope="col" style="font-size: 1em;">Description</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row"><img width="100" src="../../assets/images/badges/Happiness.png" alt="Alternate Text" /></td>
+                <td scope="row" style="vertical-align: middle; font-size: 1.2em">Happiness</td>
+                <td scope="row" style="vertical-align: middle; font-size: 1.2em">Congratulations! You have received the Happiness badge. You have inspired happiness in the lives of those around you. Keep up the great work!</td>
+              </tr>
+              <tr>
+                <td scope="row"><img width="100" src="../../assets/images/badges/Kindness5.jpg" alt="Alternate Text" /></td>
+                <td scope="row" style="vertical-align: middle; font-size: 1.2em">Kindness</td>
+                <td scope="row" style="vertical-align: middle; font-size: 1.2em">Great job! You have received the Kindness badge. Your acts of kindness and thoughtfulness have left a lasting impression on your peers. Keep it up!</td>
+              </tr>
+              <tr>
+                <td scope="row"><img width="100" src="../../assets/images/badges/TeamworkBadge.png" alt="Alternate Text" /></td>
+                <td scope="row" style="vertical-align: middle; font-size: 1.2em">Teamwork</td>
+                <td scope="row" style="vertical-align: middle; font-size: 1.2em">Way to go! You have received the Teamwork badge. You have made a significant impact with your willingness to help others. Thank you for all you do! </td>
+              </tr>
+              <!--<tr>
+      <td scope="row"><img src="#" alt="Alternate Text" /></td>
+      <td scope="row">{{t.points}}</td>
+      <td scope="row">{{t.awardToName}}</td>
+    </tr>-->
+            </tbody>
+          </table>
           <hr>
-            <div class="form-group">
+          <div class="form-group">
 
-              <div class="col-xs-6">
-                <h4 style="display:inline-block">Total Tokens Awarded: </h4>
-                <h4 style="display:inline-block; padding-left: 20px">{{tokenStats.amtEarnedLifeTime}}</h4>
-              </div>
-              <hr />
+            <div class="col-xs-6">
+
+
+              <h4 style="display: inline-block">Total Tokens Awarded:</h4>
+              <h4 style="display: inline-block; padding-left: 20px">{{tokenStats.amtEarnedLifeTime}}</h4>
             </div>
-            <div class="form-group">
+            <hr/>
+          </div>
+          <div class="form-group">
 
-              <div class="col-xs-6">
-                <h4 style="display:inline-block">Awards Bank Balance: </h4>
-                <h4 style="display:inline-block; padding-left: 20px">{{tokenStats.amtAvailToRedeem}}</h4>
-              </div>
-              <hr />
+            <div class="col-xs-6">
+              <h4 style="display: inline-block">Awards Bank Balance: </h4>
+              <h4 style="display: inline-block; padding-left: 20px">{{tokenStats.amtAvailToRedeem}}</h4>
             </div>
-            <div class="form-group">
+            <hr/>
+          </div>
+          <div class="form-group">
 
-              <div class="col-xs-6">
-                <h4 style="display:inline-block">Giveaway Bank: </h4>
-                <h4 style="display:inline-block; padding-left: 20px">{{tokenStats.amtAvailToGivePeriod}}</h4>
-              </div>
+            <div class="col-xs-6">
+              <h4 style="display: inline-block">Giveaway Bank: </h4>
+              <h4 style="display: inline-block; padding-left: 20px">{{tokenStats.amtAvailToGivePeriod}}</h4>
             </div>
+          </div>
 
-          <hr />
+          <hr/>
 
-            <a *ngIf="!displayHistory" class="btn bg-beyond-orange" (click)="showHistory()">Show History</a>
-            <a *ngIf="displayHistory" class="btn bg-beyond-orange" (click)="hideHistory()">Hide History</a>
-            <div *ngIf="displayHistory">
-              <h2 style="padding: 20px 0px;">Transactions History</h2>
-              <table class="table">
-                <thead>
-                <th scope="col">Date</th>
-                <th scope="col">Tokens</th>
-                <th scope="col">To</th>
-                <th scope="col">From</th>
-                <th scope="col">Message</th>
-                <th scope="col">Type</th>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let t of transactions">
-                    <td scope="row">{{t.transactionDate}}</td>
-                    <td scope="row">{{t.points}}</td>
-                    <td scope="row">{{t.awardTo.name}}</td>
-                    <td scope="row">{{t.awardFrom.name}}</td>
-                    <td scope="row">{{t.awardMessage}}</td>
-                    <td scope="row">{{t.product.name}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <a *ngIf="!displayHistory" class="btn bg-beyond-orange" (click)="showHistory()">Show History</a>
+          <a *ngIf="displayHistory" class="btn bg-beyond-orange" (click)="hideHistory()">Hide History</a>
+          <div *ngIf="displayHistory">
+            <h2 style="padding: 20px 0px;">Transactions History</h2>
+            <table class="table">
+              <thead>
+              <th scope="col">Date</th>
+              <th scope="col">Tokens</th>
+              <th scope="col">To</th>
+              <th scope="col">From</th>
+              <th scope="col">Message</th>
+              <th scope="col">Type</th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let t of transactions">
+                <td scope="row">{{t.transactionDate}}</td>
+                <td scope="row">{{t.points}}</td>
+                <td scope="row">{{t.awardTo.name}}</td>
+                <td scope="row">{{t.awardFrom.name}}</td>
+                <td scope="row">{{t.awardMessage}}</td>
+                <td scope="row">{{t.product.name}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div><!--/tab-pane-->
       </div><!--/tab-content-->
     </div><!--/col-9-->

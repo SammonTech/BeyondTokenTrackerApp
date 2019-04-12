@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Entities.Dtos
+﻿namespace TokenTracker.Domain.Entities.Dtos
 {
     public class UserDto
     {
@@ -16,6 +10,7 @@ namespace Domain.Entities.Dtos
 
         public string Password { get; set; }
         public string ImgSrc { get; set; }
+        public bool IsActive { get; set; }
         public GroupDto Group { get; set; }
         public RoleDto Role { get; set; }
     }

@@ -1,4 +1,4 @@
-﻿using Domain.Entities.Models;
+﻿using TokenTracker.Domain.Entities.Models;
 using System.Linq;
 
 namespace Domain.Repositories.Interfaces

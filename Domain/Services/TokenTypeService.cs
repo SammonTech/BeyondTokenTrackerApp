@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Domain.Entities.Models;
+using TokenTracker.Domain.Entities.Models;
 using Domain.Repositories.Interfaces;
 using Domain.Services.Interfaces;
 

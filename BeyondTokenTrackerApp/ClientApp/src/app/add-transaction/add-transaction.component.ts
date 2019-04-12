@@ -55,7 +55,7 @@ export class AddTransactionComponent implements OnInit {
     });
 
     //this.getAllUsers().subscribe(x => {
-    this.userService.getAllUser().subscribe(x => {
+    this.userService.getActiveUser().subscribe(x => {
       this.users = x.sort(function (a, b) {
         var x = a.name.toLowerCase();
         var y = b.name.toLowerCase();

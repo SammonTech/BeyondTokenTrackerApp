@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using Domain.Entities.Dtos;
-using Domain.Entities.Models;
+using TokenTracker.Domain.Entities.Dtos;
+using TokenTracker.Domain.Entities.Models;
 using Domain.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BeyondTokenTrackerApp.Controllers
+namespace TokenTrackerApp.Controllers
 {
     public class TokenTypeController : Controller
     {

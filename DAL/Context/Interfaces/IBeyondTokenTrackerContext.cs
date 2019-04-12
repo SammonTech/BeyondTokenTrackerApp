@@ -1,4 +1,4 @@
-﻿using Domain.Entities.Models;
+﻿using TokenTracker.Domain.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Context.Interfaces

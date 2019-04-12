@@ -16,6 +16,8 @@ export class ConfigurationService {
   public userApiUrl: string = 'api/users';
   public transactionApiUrl: string = 'api/transaction';
   public transactionTypeApiUrl: string = 'api/tokentype';
+  public badgeImgSrcBaseUrl: string = '../../assets/images/badges/';
+  public productImgSrcBaseUrl: string = '../../assets/images/products/';
 
   constructor(private localStorage: LocalStoreManager) {
 

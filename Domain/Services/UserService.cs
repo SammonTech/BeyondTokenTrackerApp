@@ -1,5 +1,7 @@
-﻿using System.Linq;
-using Domain.Entities.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using TokenTracker.Domain.Entities.Dtos;
+using TokenTracker.Domain.Entities.Models;
 using Domain.Repositories.Interfaces;
 using Domain.Services.Interfaces;
 
@@ -30,6 +32,17 @@ namespace Domain.Services
         public User UpdateUser(User user)
         {
             return _userRepository.Update(user);
+        }
+
+        public List<User> NamelyUpdate(List<NamelyUpdateSvm> namelyUsers)
+        {
+            var users = new List<User>();
+            //_userRepository.Update(users);
+            return users;
+        }
+        public void SaveChanges()
+        {
+            _userRepository.SaveChanges();
         }
     }
 }

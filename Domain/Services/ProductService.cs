@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq;
-using Domain.Entities;
-using Domain.Entities.Models;
+﻿using System.Linq;
+using TokenTracker.Domain.Entities;
+using TokenTracker.Domain.Entities.Models;
 using Domain.Repositories.Interfaces;
 using Domain.Services.Interfaces;
 

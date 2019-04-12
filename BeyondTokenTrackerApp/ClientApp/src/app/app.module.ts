@@ -28,6 +28,8 @@ import { LoginComponent } from './login/login.component';
 import { AddTransactionComponent } from './add-transaction/add-transaction.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { RedeemTokensComponent } from './redeem-tokens/redeem-tokens.component';
 
 //services
 import { AlertService } from './services/alert.service';
@@ -39,6 +41,7 @@ import { UserService } from './services/user.service';
 import { UserEndpoint } from './services/user-endpoint.service';
 import { TokenEndpoint } from './services/token-endpoint.service';
 import { TokenTypeEndpoint } from './services/token-type-endpoint.service';
+
 
 
 @NgModule({
@@ -56,8 +59,10 @@ import { TokenTypeEndpoint } from './services/token-type-endpoint.service';
     BootstrapDatepickerDirective,
     GroupByPipe,
     AddTransactionComponent,
-    DashboardComponent
-    ,NotFoundComponent
+    DashboardComponent,
+    NotFoundComponent,
+    ProductListComponent,
+    RedeemTokensComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

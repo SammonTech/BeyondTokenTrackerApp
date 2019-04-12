@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DAL.Context;
-using Domain.Entities.Models;
+using TokenTracker.Domain.Entities.Dtos;
+using TokenTracker.Domain.Entities.Models;
 using Domain.Repositories.Interfaces;
 using Domain.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BeyondTokenTrackerApp.Controllers
+namespace TokenTrackerApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -25,7 +26,16 @@ namespace BeyondTokenTrackerApp.Controllers
         [Route("all")]
         public IEnumerable<User> Users()
         {
-            var listUsers = _userService.GetUsers().ToList();
+            var listUsers = _userService.GetUsers().Where(x => x.UserId != 1).ToList();
+
+            return listUsers;
+        }
+
+        [HttpGet]
+        [Route("active")]
+        public IEnumerable<User> ActiveUsers()
+        {
+            var listUsers = _userService.GetUsers().Where(x => x.IsActive == true && x.UserId != 1).ToList();
 
             return listUsers;
         }

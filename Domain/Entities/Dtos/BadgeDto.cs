@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities.Dtos
+namespace TokenTracker.Domain.Entities.Dtos
 {
     public partial class BadgeDto
     {

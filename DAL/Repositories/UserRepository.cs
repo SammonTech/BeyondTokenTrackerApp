@@ -1,9 +1,9 @@
-﻿using Domain.Entities.Models;
+﻿using TokenTracker.Domain.Entities.Models;
 using Domain.Repositories.Interfaces;
 using System.Linq;
 using DAL.Context;
 
-namespace DAL.Repositories
+namespace TokenTracker.DAL.Repositories
 {
     public class UserRepository : IUserRepository
     {
@@ -31,6 +31,11 @@ namespace DAL.Repositories
             _context.User.Update(user);
 
             return user;
+        }
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
         }
     }
 }

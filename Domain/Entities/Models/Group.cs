@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Domain.Entities.Models
+namespace TokenTracker.Domain.Entities.Models
 {
     public partial class Group
     {

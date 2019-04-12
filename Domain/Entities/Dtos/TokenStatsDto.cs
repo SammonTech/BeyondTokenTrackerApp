@@ -1,4 +1,4 @@
-﻿namespace Domain.Entities.Dtos
+﻿namespace TokenTracker.Domain.Entities.Dtos
 {
     public partial class TokenStatsDto
     {

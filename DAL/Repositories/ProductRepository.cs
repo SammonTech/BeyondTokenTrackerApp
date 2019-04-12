@@ -1,10 +1,10 @@
-﻿using Domain.Entities.Models;
+﻿using TokenTracker.Domain.Entities.Models;
 using Domain.Repositories.Interfaces;
 using System.Linq;
 using DAL.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace DAL.Repositories
+namespace TokenTracker.DAL.Repositories
 {
     public class ProductRepository : IProductRepository
     {

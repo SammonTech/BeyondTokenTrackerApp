@@ -11,9 +11,11 @@ import { ConfigurationService } from './configuration.service';
 export class UserEndpoint extends EndpointFactory {
 
   private readonly _usersAllUrl: string = '/api/users/all';
+  private readonly _usersActiveUrl: string = '/api/users/active';
   private readonly _userByIdUrl: string = '/api/users';
 
   get usersAllUrl() { return this.configurations.baseUrl + this._usersAllUrl; }
+  get usersActiveUrl() { return this.configurations.baseUrl + this._usersActiveUrl; }
   get userByIdUrl() { return this.configurations.baseUrl + this._userByIdUrl; }
 
 
@@ -31,6 +33,12 @@ export class UserEndpoint extends EndpointFactory {
 
   getUsersEndpoint<T>(): Observable<T> {
     const endpointUrl = this.usersAllUrl;
+
+    return this.http.get<T>(endpointUrl);
+  }
+
+  getActiveUsersEndpoint<T>(): Observable<T> {
+    const endpointUrl = this.usersActiveUrl;
 
     return this.http.get<T>(endpointUrl);
   }

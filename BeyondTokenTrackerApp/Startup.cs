@@ -1,7 +1,7 @@
 using System;
-using BeyondTokenTrackerApp.Mapping;
+using TokenTrackerApp.Mapping;
 using DAL.Context;
-using DAL.Repositories;
+using TokenTracker.DAL.Repositories;
 using Domain.Repositories.Interfaces;
 using Domain.Services;
 using Domain.Services.Interfaces;
@@ -13,9 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
-namespace BeyondTokenTrackerApp
+namespace TokenTrackerApp
 {
     public class Startup
     {

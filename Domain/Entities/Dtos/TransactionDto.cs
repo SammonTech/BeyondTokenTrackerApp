@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace Domain.Entities.Dtos
+namespace TokenTracker.Domain.Entities.Dtos
 {
     public partial class TransactionDto
     {

@@ -20,6 +20,10 @@ export class UserService {
   getAllUser() {
     return this.userEndpoint.getUsersEndpoint<User[]>();
   }
+
+  getActiveUser() {
+    return this.userEndpoint.getActiveUsersEndpoint<User[]>();
+  }
   //updateUser(user: UserEdit) {
   //  return this.userEndpoint.getUpdateUserEndpoint(user, user.userId);
   //}
